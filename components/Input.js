@@ -8,19 +8,35 @@ export default function Header() {
 
     return (
         <>
-        <TextInput
-            style={styles.container}
-            onChangeText={onChangeText}
-            value={text}
-        />
-        <Button 
-            title="Press me"
-            onPress={() => Alert.alert('Simple Button pressed')}
-        />
-        <Button 
-            title="Press me"
-            onPress={() => Alert.alert('Simple Button pressed')}
-        />
+            <TextInput
+                style={styles.container}
+                onChangeText={onChangeText}
+                value={text}
+            />
+            <Button
+                title="Press me"
+                onPress={() => Alert.alert('Simple Button pressed')}
+            />
+            <Button
+                title="Press me"
+                onPress={() => Alert.alert('Simple Button pressed')}
+            />
+
+
+            <Text>{balance}</Text>
+            <TextInput
+                style={styles.textbox}
+                placeholder={"Value"}
+                onChangeText={onChangeText}
+            />
+            <Text>
+                <button onClick={() => setBalance(balance + 1)}>
+                    Income
+                </button>
+                <button onClick={() => setBalance(balance - 1)}>
+                    Expense
+                </button>
+            </Text>
         </>
     );
 }
@@ -33,3 +49,4 @@ const styles = StyleSheet.create({
         padding: 10,
     },
 });
+
